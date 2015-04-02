@@ -1,0 +1,34 @@
+{% load static compress %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+	<!-- Extra CSS -->
+	{% compress css %}
+        <!-- <link rel="stylesheet" href="{% static "css/all.min.css" %}"> -->
+        <link rel="stylesheet" href="{% static "css/base.css" %}">
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+        {% block extra_css %}{% endblock %}
+    {% endcompress %}
+	<!-- Extra CSS END -->
+</head>
+<body>
+<!-- Header -->
+<!-- Header END -->
+<div class="wrapper full-mh">
+	<!-- Main Content -->
+	{% block content %}
+
+	{% endblock %}
+	<!-- Main Content END -->
+</div>
+
+<!-- Scripts -->
+{% compress js %}
+    <script type="text/javascript" src="{% static "js/main.js"%}"></script>
+{% block extra_js %}{% endblock %}
+{% endcompress %}
+<!-- Scripts END -->
+</body>
+</html>

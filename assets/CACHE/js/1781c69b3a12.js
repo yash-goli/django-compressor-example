@@ -1,0 +1,1 @@
+(function(window,document,undefined){}(window,document,undefined));$(window).load(function(){$('.flexslider').flexslider({controlNav:false,slideshowSpeed:10000,animationSpeed:600,});});
